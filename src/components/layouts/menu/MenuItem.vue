@@ -5,6 +5,11 @@ const props = defineProps({
 </script>
 <template>
   <li class="nav-item">
+    <!-- {
+      title: '게시판',
+      url: '/board/list',
+      icon: 'fa-solid fa-paste',
+    } -->
     <router-link class="nav-link" :to="menu.url">
       <i :class="menu.icon"></i>
       {{ menu.title }}

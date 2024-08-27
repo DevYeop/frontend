@@ -8,7 +8,8 @@ import Footer from './Footer.vue';
     <Header />
     <NavBar />
     <div class="content my-5 px-3">
-      <slot></slot>
+      <slot> </slot>
+      <!-- JoinPage.vue -->
     </div>
     <Footer />
   </div>

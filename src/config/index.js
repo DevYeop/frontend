@@ -18,8 +18,14 @@ export default {
       url: '/gallery/list',
       icon: 'fa-regular fa-images',
     },
+    {
+      title: '저녁뭐해먹지',
+      url: '/food/list',
+      icon: 'fa-regular fa-compass',
+    },
   ],
-  accoutMenus: {
+  accountMenus: {
+    // account
     // 인증 관련 메뉴 정보
     login: {
       url: '/auth/login',
