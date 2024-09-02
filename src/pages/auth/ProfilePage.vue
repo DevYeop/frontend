@@ -57,7 +57,7 @@ const changeRef3 = () => {
 
 // reactive를 변경할 때
 const changeRef4 = () => {
-  auth222.state.user.username = '피니아-이상엽';
+  auth222.state.user.username = 'sangyeop0715';
 };
 </script>
 
