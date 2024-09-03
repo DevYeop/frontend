@@ -1,7 +1,9 @@
 <script setup>
 import { computed, reactive, ref } from 'vue';
 import { useAuthStore } from '@/stores/auth';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+
+const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
@@ -9,12 +11,6 @@ const member = reactive({
   password: '',
 });
 
-/**
- * 
- {\   username: 'sangyeop0715',
-  password: '',
-}
- */
 const error = ref('');
 const disableSubmit = computed(() => !(member.username && member.password));
 const login = async () => {
@@ -22,7 +18,13 @@ const login = async () => {
   try {
     // 전역상태가 변하면서 컴포넌트들이 바뀌는 거 설명
     await auth.login(member);
-    router.push('/');
+    if (cr.query.next) {
+      // 로그인 후 이동할 페이지가 있는 경우
+      router.push({ name: cr.query.next });
+    } else {
+      // 일반 로그인
+      router.push('/');
+    }
   } catch (e) {
     // 로그인 에러
     console.log('에러=======', e);

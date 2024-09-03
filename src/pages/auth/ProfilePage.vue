@@ -20,9 +20,11 @@ const disableSubmit = computed(() => !member.email || !member.password);
 
 const onSubmit = async () => {
   if (!confirm('수정하시겠습니까?')) return;
+
   if (avatar.value.files.length > 0) {
     member.avatar = avatar.value.files[0];
   }
+
   try {
     await authApi.update(member);
     error.value = '';
@@ -63,11 +65,7 @@ const changeRef4 = () => {
 
 <template>
   <div class="mt-5 mx-auto" style="width: 500px">
-    <hr />
-    <hr />
-    <br /><br /><br /><br /><br /><br />
-
-    ref를 화면에 뿌릴 때 (primitive)
+    <!-- ref를 화면에 뿌릴 때 (primitive)
     {{ ref_primitive }}
     <button @click="changeRef1">변경</button>
     <br />
@@ -91,8 +89,9 @@ const changeRef4 = () => {
 
     <br /><br /><br /><br /><br /><br />
     <hr />
-    <hr />
+    <hr /> -->
     <h1><i class="fa-solid fa-user-gear my-3"></i> 회원 정보</h1>
+
     <form @submit.prevent="onSubmit">
       <div class="mb-3 mt-3">
         <img :src="avatarPath" class="avatar avatar-lg me-4" />

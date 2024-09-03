@@ -16,14 +16,17 @@ const disableSubmit = computed(() => !article.title);
 
 const submit = async () => {
   if (!confirm('등록할까요?')) return;
+
   if (files.value.files.length > 0) {
     // 첨부파일 선택이 있는 경우
     article.files = files.value.files;
   }
+
   await boardApi.create(article);
   router.push('/board/list');
 };
 </script>
+
 <template>
   <h1><i class="fa-regular fa-pen-to-square"></i> 글 작성</h1>
   <form @submit.prevent="submit">
@@ -67,7 +70,10 @@ const submit = async () => {
         <i class="fa-solid fa-check"></i>
         확인
       </button>
-      <router-link class="btn btn-primary" :to="{ name: 'board/list' }">
+      <router-link
+        class="btn btn-primary"
+        :to="{ name: 'board/list', query: cr.query }"
+      >
         <i class="fa-solid fa-list"></i>
         목록
       </router-link>

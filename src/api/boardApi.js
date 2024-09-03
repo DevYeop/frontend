@@ -11,9 +11,11 @@ export default {
 
   async create(article) {
     const formData = new FormData();
+
     formData.append('title', article.title);
     formData.append('writer', article.writer);
     formData.append('content', article.content);
+
     if (article.files) {
       for (let i = 0; i < article.files.length; i++) {
         formData.append('files', article.files[i]);
@@ -30,6 +32,7 @@ export default {
     console.log('BOARD GET', data);
     return data;
   },
+
   async delete(no) {
     const { data } = await api.delete(`${BASE_URL}/${no}`);
     console.log('BOARD DELETE: ', data);
