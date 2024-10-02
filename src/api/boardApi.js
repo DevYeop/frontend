@@ -4,7 +4,25 @@ const headers = { 'Content-Type': 'multipart/form-data' };
 
 export default {
   async getList(params) {
+    /**
+     * 
+     * 
+     * 
+     * params 으로 전달되는 데이터의 정체는 아래와 같이, 이미 객체이다
+     * {
+  page: parseInt(cr.query.page) || 1,
+  amount: parseInt(cr.query.amount) || 10,
+}
+그런데도 아래 axios코드에서 {}로  감싸주는 이유는 axios 사용법과 관련이 있다.
+
+     */
+
+    // 원래 코드
     const { data } = await api.get(BASE_URL, { params });
+    // 풀어 쓴 코드
+    // const { data } = await api.get(BASE_URL, { params: params });
+    // 즉 단축 속성명이용해 params 라는 키값에, 데이터를 실어줘야하가ㅣ 때문이다
+
     console.log('BOARD GET LIST: ', data);
     return data;
   },

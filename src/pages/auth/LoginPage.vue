@@ -7,12 +7,12 @@ const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
-  username: 'sangyeop0715',
-  password: '',
+  userId: 'sangyeop07151',
+  password: '1234',
 });
 
 const error = ref('');
-const disableSubmit = computed(() => !(member.username && member.password));
+const disableSubmit = computed(() => !(member.userId && member.password));
 const login = async () => {
   console.log(member);
   try {
@@ -49,7 +49,7 @@ const login = async () => {
           type="text"
           class="form-control"
           placeholder="사용자 ID"
-          v-model="member.username"
+          v-model="member.userId"
         />
       </div>
 
