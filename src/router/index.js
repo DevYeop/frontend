@@ -21,7 +21,6 @@ const router = createRouter({
     { path: '/food/list', name: 'food', component: FoodPage },
 
     { path: '/outcome', name: 'expense', component: OutCome },
-    // { path: '/test', name: 'test', component: Test },
 
     {
       path: '/expenseHistroy',
@@ -31,8 +30,7 @@ const router = createRouter({
 
     // {
     //   path: '/auth/login',
-    //   name: 'login',
-    //   component: () => import('../pages/auth/LoginPage.vue'),
+    //   name: 'login',falseth/LoginPage.vue'),
     // },
     // {
     //   path: '/auth/join',
