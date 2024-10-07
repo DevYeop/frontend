@@ -33,8 +33,6 @@ export default {
     // 그리고 일반적으로 보내던 json 형태의 데이터가 아니라,
     // 멀티파트 데이터이기 때문에 헤더설정을 해줘야한다.
     const { data } = await api.post(BASE_URL, formData, headers);
-    console.log('AUTH POST: ', data);
-
     return data;
   },
 

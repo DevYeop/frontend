@@ -18,15 +18,21 @@ const username = computed(() => auth.username);
 </script>
 
 <template>
-  <ul class="navbar-nav ms-auto">
+  <ul class="navbar-nav ms-auto" style="display: flex; flex-direction: row">
     <template v-if="islogin">
       {{ auth.state.test }}
-      <AccountMenuItem :username="username" />
-      <LogoutMenuItem />
+      <AccountMenuItem :username="username" class="menu-item" />
+      <LogoutMenuItem class="menu-item" />
     </template>
     <template v-else>
-      <MenuItem :menu="login" />
-      <MenuItem :menu="join" />
+      <MenuItem :menu="login" class="menu-item" />
+      <MenuItem :menu="join" class="menu-item" />
     </template>
   </ul>
 </template>
+
+<style scoped>
+.menu-item {
+  padding: 22px;
+}
+</style>

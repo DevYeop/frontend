@@ -4,9 +4,8 @@ import DefaultLayout from './components/layouts/DefaultLayout.vue';
 import ApplicationLayout from './components/layouts/ApplicationLayout.vue';
 </script>
 <template>
-  <DefaultLayout>
+  <ApplicationLayout>
     <RouterView />
-  </DefaultLayout>
+  </ApplicationLayout>
 </template>
-`
 <style scoped></style>

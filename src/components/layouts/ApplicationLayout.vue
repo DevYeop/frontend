@@ -1,3 +1,7 @@
+<script setup>
+import AccountMenuGroup from '@/components/layouts/menu/AccountMenuGroup.vue';
+</script>
+
 <template>
   <v-layout class="rounded rounded-md" id="v-layout">
     <!-- App Bar -->
@@ -18,7 +22,7 @@
         >
       </v-list-item>
 
-      <v-list-item t class="menu-item">Menu4</v-list-item>
+      <v-list-item t class="menu-item"> <AccountMenuGroup /> </v-list-item>
     </v-app-bar>
 
     <!-- Main Content -->
